@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scheda di autovalutazione</title>
+<style>
+:root{--bg:#fff8e8;--card:#ffffff;--ink:#253047;--accent:#ff7a59;--accent2:#4fb3ff;--accent3:#7bd389;--accent4:#ffd166;--line:#d9e2ec}
+*{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#fff8e8,#fffef8);color:var(--ink)}
+.container{max-width:980px;margin:24px auto;padding:18px} .header{background:linear-gradient(135deg,#ffb703,#fb8500,#ff7a59);color:#fff;padding:22px;border-radius:22px;box-shadow:0 10px 24px rgba(0,0,0,.08)}
+.header h1{margin:0;font-size:34px;letter-spacing:.5px} .header h2{margin:6px 0 0;font-size:22px;font-weight:700}
+.card{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:18px;margin-top:16px;box-shadow:0 6px 18px rgba(0,0,0,.05)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px} .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px} .grid6{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.field{display:flex;flex-direction:column;gap:6px} label{font-weight:700} input[type=text],input[type=date],textarea{width:100%;border:2px solid var(--line);border-radius:14px;padding:12px 14px;font-size:16px;background:#fff}
+textarea{min-height:90px;resize:vertical} .hint{background:#eef7ff;border-left:6px solid var(--accent2);padding:12px 14px;border-radius:14px;margin-top:10px;font-size:16px}
+.section-title{font-size:22px;margin:0 0 12px;color:#1f3b73}.sub{margin:0 0 10px;font-size:16px}
+.choice{border:2px solid var(--line);border-radius:16px;padding:12px;text-align:center;background:#fff;cursor:pointer;transition:.15s;min-height:96px;display:flex;flex-direction:column;justify-content:center;gap:4px}
+.choice:hover{transform:translateY(-1px)} .choice .emoji{font-size:34px;line-height:1} .choice strong{font-size:15px}
+.choice.selected{border-color:#2b7cff;background:#eaf2ff;box-shadow:0 0 0 3px rgba(43,124,255,.12) inset}
+.tag{display:inline-block;padding:7px 12px;border-radius:999px;background:#fff1d6;border:1px solid #ffd166;font-weight:700}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center} .small{font-size:13px;color:#5d6b82}
+.boxline{border:2px dashed #b9c9db;border-radius:16px;padding:14px;background:#fbfdff}
+button{border:0;border-radius:14px;padding:12px 16px;font-size:15px;font-weight:700;cursor:pointer}.primary{background:var(--accent);color:#fff}.secondary{background:#e9eef5;color:#243447}
+.checks{display:flex;gap:18px;flex-wrap:wrap} .check{display:flex;align-items:center;gap:8px;font-size:16px;background:#fff;border:2px solid var(--line);padding:10px 12px;border-radius:14px;cursor:pointer}
+.check input{width:18px;height:18px}
+hr{border:none;border-top:2px dashed var(--line);margin:16px 0}
+@media print{body{background:#fff}.container{max-width:none;margin:0;padding:0}.card,.header{box-shadow:none}.no-print{display:none}}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>📔 SCHEDA DI AUTOVALUTAZIONE</h1>
+    <h2>🎨 BARCELONA TRA COLORI ED EMOZIONI 🗺️😊</h2>
+  </div>
+
+  <div class="card">
+    <div class="grid3">
+      <div class="field"><label>IL MIO NOME</label><input type="text" value="MARCO"></div>
+      <div class="field"><label>DATA</label><input type="date"></div>
+      <div class="field"><label>CLASSE</label><input type="text" value="2L"></div>
+    </div>
+    <div class="hint">✨ Contrassegna l’emoji che ti sembra giusta. ✨ Scrivi una parola o due nella casella.</div>
+  </div>
+
+  <div class="card">
+    <h3 class="section-title">1ª ORA — GEOGRAFIA — IL VIDEO E LA CARTINA</h3>
+    <div class="field"><label>HO FATTO</label><textarea>HO GUARDATO IL VIDEO DI BARCELLONA. HO TROVATO BARCELLONA SULLA CARTINA. POI SONO USCITO IN GIARDINO (PAUSA 15 MINUTI).</textarea></div>
+    <p class="sub"><strong>MI È PIACIUTO?</strong></p>
+    <div class="grid4 options" data-multi="false">
+      <div class="choice"><div class="emoji">😀</div><strong>MOLTO</strong></div>
+      <div class="choice"><div class="emoji">🙂</div><strong>ABBASTANZA</strong></div>
+      <div class="choice"><div class="emoji">😐</div><strong>POCO</strong></div>
+      <div class="choice"><div class="emoji">😟</div><strong>PER NIENTE</strong></div>
+    </div>
+    <p class="sub" style="margin-top:14px"><strong>COSA HO PROVATO?</strong></p>
+    <div class="grid6 options" data-multi="true">
+      <div class="choice"><div class="emoji">😊</div><strong>GIOIA</strong></div>
+      <div class="choice"><div class="emoji">😲</div><strong>SORPRESA</strong></div>
+      <div class="choice"><div class="emoji">😨</div><strong>PAURA</strong></div>
+      <div class="choice"><div class="emoji">😢</div><strong>TRISTEZZA</strong></div>
+      <div class="choice"><div class="emoji">😡</div><strong>RABBIA</strong></div>
+      <div class="choice"><div class="emoji">🤢</div><strong>DISGUSTO</strong></div>
+    </div>
+    <p class="sub" style="margin-top:14px"><strong>HO LAVORATO...</strong></p>
+    <div class="checks">
+      <label class="check"><input type="checkbox">🙋 DA SOLO</label>
+      <label class="check"><input type="checkbox">👫 CON I COMPAGNI</label>
+      <label class="check"><input type="checkbox">🧑‍🏫 CON L’INSEGNANTE</label>
+    </div>
+    <div style="margin-top:14px"><span class="tag">LA MIA PAROLA DI OGGI</span></div>
+    <div class="boxline" style="margin-top:10px"><strong>VIAGGIO AEREO</strong></div>
+  </div>
+
+  <div class="card">
+    <h3 class="section-title">2ª ORA — GEOGRAFIA — LA MAPPA DELLE EMOZIONI</h3>
+    <div class="field"><label>HO FATTO</label><textarea>HO COLORATO LA MAPPA CON LE 6 EMOZIONI. HO MESSO UN COLORE A OGNI LUOGO DI BARCELLONA.</textarea></div>
+    <p class="sub"><strong>MI È PIACIUTO?</strong></p>
+    <div class="grid4 options" data-multi="false">
+      <div class="choice"><div class="emoji">😀</div><strong>MOLTO</strong></div>
+      <div class="choice"><div class="emoji">🙂</div><strong>ABBASTANZA</strong></div>
+      <div class="choice"><div class="emoji">😐</div><strong>POCO</strong></div>
+      <div class="choice"><div class="emoji">😟</div><strong>PER NIENTE</strong></div>
+    </div>
+    <p class="sub" style="margin-top:14px"><strong>COSA HO PROVATO?</strong></p>
+    <div class="grid6 options" data-multi="true">
+      <div class="choice"><div class="emoji">😊</div><strong>GIOIA</strong></div>
+      <div class="choice"><div class="emoji">😲</div><strong>SORPRESA</strong></div>
+      <div class="choice"><div class="emoji">😨</div><strong>PAURA</strong></div>
+      <div class="choice"><div class="emoji">😢</div><strong>TRISTEZZA</strong></div>
+      <div class="choice"><div class="emoji">😡</div><strong>RABBIA</strong></div>
+      <div class="choice"><div class="emoji">🤢</div><strong>DISGUSTO</strong></div>
+    </div>
+    <p class="sub" style="margin-top:14px"><strong>HO LAVORATO...</strong></p>
+    <div class="checks">
+      <label class="check"><input type="checkbox">🙋 DA SOLO</label>
+      <label class="check"><input type="checkbox">👫 CON I COMPAGNI</label>
+      <label class="check"><input type="checkbox">🧑‍🏫 CON L’INSEGNANTE</label>
+    </div>
+  </div>
+
+  <div class="card row no-print">
+    <button class="primary" onclick="window.print()">Stampa / Salva PDF</button>
+    <button class="secondary" onclick="resetAll()">Azzera tutto</button>
+    <span class="small">Formato A4 verticale, pronto per la classe.</span>
+  </div>
+</div>
+<script>
+function setupOptions(){
+  document.querySelectorAll('.options').forEach(group=>{
+    const multi = group.dataset.multi === 'true';
+    const items = [...group.querySelectorAll('.choice')];
+    items.forEach(item=>item.addEventListener('click',()=>{
+      if(!multi){items.forEach(x=>x.classList.remove('selected'));}
+      item.classList.toggle('selected', multi ? !item.classList.contains('selected') : true);
+    }));
+  });
+}
+function resetAll(){
+  document.querySelectorAll('input[type=text], textarea').forEach(el=>{
+    if(el.tagName==='TEXTAREA') return;
+  });
+  document.querySelectorAll('.choice.selected').forEach(el=>el.classList.remove('selected'));
+  document.querySelectorAll('input[type=checkbox]').forEach(el=>el.checked=false);
+}
+setupOptions();
+</script>
+</body>
+</html>
